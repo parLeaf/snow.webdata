@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>时空足迹 · 斯诺在中国</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
     <link rel="stylesheet" href="css/style.css">
     <style>
-        #map { height: 65vh; border-radius: 24px; border: 2px solid #dbbc7e; margin-bottom: 1rem; background: #e2e0d8; }
-        .map-container { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-        .event-sidebar { flex: 1; background: #fffaf2; border-radius: 24px; padding: 1rem; overflow-y: auto; max-height: 65vh; }
-        .event-sidebar h3 { border-left: 5px solid #8b2c1d; padding-left: 12px; margin-bottom: 1rem; }
-        .loc-event-item { border-bottom: 1px solid #e2d5c0; padding: 10px 0; cursor: pointer; transition: background 0.1s; }
-        .loc-event-item:hover { background: #f3ebdd; }
-        .loc-event-name { font-weight: bold; color: #a53721; }
-        .loc-event-desc { font-size: 0.85rem; color: #4e4a42; }
+        /* 覆盖部分地图样式使其适应深色 */
+        .leaflet-container { background: #1e1e1e; }
+        .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+            background: #2c2c2c;
+            color: #e0e0e0;
+            border-radius: 8px;
+            border-left: 4px solid #b32d2d;
+        }
+        .loc-jump { background: #b32d2d; color: white; border: none; }
     </style>
 </head>
 <body>
     <div class="navbar">
         <a href="index.html" class="nav-btn">🏠 首页</a>
-        <a href="map.html" class="nav-btn active">🗺️ 时空地图</a>
+        <a href="map.html" class="nav-btn active">🗺️ 时空足迹</a>
         <a href="network.html" class="nav-btn">🕸️ 人物关系网</a>
         <a href="timeline.html" class="nav-btn">📅 大事件年历</a>
     </div>
@@ -27,14 +28,27 @@
         <h2>📍 斯诺的时空足迹 · 历史现场</h2>
         <div class="map-container">
             <div id="map"></div>
-            <div class="event-sidebar" id="mapEventList">
+            <div class="event-sidebar">
                 <h3>📌 重要地点 & 关联事件（点击跳转时间轴）</h3>
-                <div id="dynamicEventsList">加载中...</div>
+                <div id="dynamicEventsList">加载地图中...</div>
             </div>
         </div>
-        <footer>点击地图上的图钉可查看详情，悬浮显示事件摘要 | 侧边栏事件可跳转时间轴</footer>
+        <!-- 图例 -->
+        <div class="map-legend">
+            <span><span class="legend-dot red"></span> 重大事件地</span>
+            <span><span class="legend-dot blue"></span> 长期居住地</span>
+            <span><span class="legend-dot green"></span> 途经/旅行地</span>
+        </div>
+        <footer>点击地图上的标记点可查看详情，悬浮显示事件摘要 | 侧边栏事件可跳转时间轴</footer>
     </div>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            if (typeof L === 'undefined') {
+                document.getElementById('dynamicEventsList').innerHTML = '<div style="color:red;">❌ 地图库加载失败，请检查网络后刷新页面。</div>';
+            }
+        });
+    </script>
     <script src="js/data.js"></script>
     <script src="js/map.js"></script>
 </body>

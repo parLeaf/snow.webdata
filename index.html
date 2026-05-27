@@ -1,37 +1,51 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>斯诺在中国 · 我在旧中国十三年</title>
+    <title>斯诺在中国 · 名人数据库</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="navbar">
-        <a href="index.html" class="nav-btn active">🏠 首页</a>
-        <a href="map.html" class="nav-btn">🗺️ 时空地图</a>
-        <a href="network.html" class="nav-btn">🕸️ 人物关系网</a>
-        <a href="timeline.html" class="nav-btn">📅 大事件年历</a>
+        <a href="index.html" class="nav-btn active"><i class="fas fa-home"></i> 首页</a>
+        <a href="map.html" class="nav-btn"><i class="fas fa-map-marked-alt"></i> 时空足迹</a>
+        <a href="network.html" class="nav-btn"><i class="fas fa-network-wired"></i> 人物关系网</a>
+        <a href="timeline.html" class="nav-btn"><i class="fas fa-timeline"></i> 大事件年历</a>
     </div>
     <div class="page-container">
         <div class="hero">
-            <h1>我在旧中国十三年</h1>
-            <p>埃德加·斯诺 · 觉醒之旅 · 1928–1941</p>
-            <div style="margin-top: 1rem;">“ 一个美国记者与古老中国命运的碰撞 ”</div>
+            <div class="hero-content">
+                <div class="portrait">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Edgar_Snow_1936.jpg" alt="埃德加·斯诺肖像">
+                </div>
+                <div class="hero-text">
+                    <h1>我在旧中国十三年</h1>
+                    <p>埃德加·斯诺 · 复始之旅 · 1928–1941</p>
+                    <div class="quote">“ 一个美国记者与过去中国命运的碰撞 ”</div>
+                </div>
+            </div>
+        </div>
+        <div class="db-info">
+            <i class="fas fa-database"></i> 数据库说明
+            <p>本数据库基于埃德加·斯诺自传《我在旧中国十三年》及《复始之旅》，提取其1928–1941年间在中国的关键足迹。涵盖<strong>13个重要地点</strong>、<strong>12个历史事件</strong>、<strong>15位核心人物</strong>。通过<strong>时空地图</strong>、<strong>人物关系网</strong>、<strong>大事件年历</strong>三种方式，呈现一位美国记者如何从旁观者成长为中国革命见证者的历程。点击下方模块开始探索。</p>
+            <div class="data-source">数据来源：埃德加·斯诺《我在旧中国十三年》（三联书店1973年版）及《复始之旅》</div>
         </div>
         <div class="card-grid">
             <div class="module-card" onclick="location.href='map.html'">
-                <div class="module-icon">🗺️</div>
+                <div class="module-icon"><i class="fas fa-map-marked-alt"></i></div>
                 <h3>时空足迹</h3>
                 <p>探寻斯诺在中国的关键地标与事件</p>
             </div>
             <div class="module-card" onclick="location.href='network.html'">
-                <div class="module-icon">🕸️</div>
+                <div class="module-icon"><i class="fas fa-network-wired"></i></div>
                 <h3>人物关系网</h3>
                 <p>革命者、名流、友人——知识网络</p>
             </div>
             <div class="module-card" onclick="location.href='timeline.html'">
-                <div class="module-icon">📅</div>
+                <div class="module-icon"><i class="fas fa-timeline"></i></div>
                 <h3>大事件年历</h3>
                 <p>竖屏时间轴 · 历史回响</p>
             </div>

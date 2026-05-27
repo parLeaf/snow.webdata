@@ -1,8 +1,13 @@
+
 let currentFilter = 'all';
 
 function renderTimeline() {
     const container = document.getElementById('timeline-container');
     if (!container) return;
+    if (typeof eventsData === 'undefined') {
+        container.innerHTML = '<div class="error-msg">❌ 数据文件加载失败。</div>';
+        return;
+    }
     let filtered = eventsData.filter(ev => currentFilter === 'all' || ev.type === currentFilter);
     filtered.sort((a,b)=> new Date(a.start) - new Date(b.start));
     container.innerHTML = filtered.map(ev => {
@@ -12,7 +17,7 @@ function renderTimeline() {
             <div class="timeline-date">${year} <span class="importance">${ev.importance}</span></div>
             <div class="timeline-title">${ev.name}</div>
             <div class="timeline-desc">${ev.desc}</div>
-            <div style="font-size:0.8rem; margin-top:6px;">📍 ${ev.location} &nbsp;| 类型: ${ev.type}</div>
+            <div style="font-size:0.8rem; margin-top:6px; color:#666;">📍 ${ev.location} &nbsp;| 类型: ${ev.type}</div>
             <button class="timeline-btn" data-loc="${ev.location}">🗺️ 查看地图</button>
         </div>`;
     }).join('');
@@ -32,7 +37,7 @@ function renderTimeline() {
             for (let item of items) {
                 if (item.getAttribute('data-location') === targetLoc) {
                     item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    item.style.boxShadow = '0 0 0 3px #e0b354';
+                    item.style.boxShadow = '0 0 0 3px #b32d2d';
                     setTimeout(() => item.style.boxShadow = '', 2000);
                     break;
                 }
