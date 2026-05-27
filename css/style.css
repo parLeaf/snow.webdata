@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Noto Sans', system-ui, sans-serif;
+    background: #f5efe7;
+    color: #2c2b28;
+}
+.navbar {
+    background: #8b2c1d;
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: 4px solid #e0b354;
+}
+.nav-btn {
+    background: none;
+    border: none;
+    color: #f0e2c5;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 40px;
+    transition: 0.2s;
+}
+.nav-btn.active {
+    background: #e0b354;
+    color: #2c2b28;
+}
+.nav-btn:hover {
+    background: #b14732;
+    color: white;
+}
+.page-container {
+    max-width: 1300px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)), url('https://cdn.pixabay.com/photo/2017/12/29/14/26/china-3047807_1280.jpg');
+    background-size: cover;
+    background-position: center 35%;
+    border-radius: 32px;
+    padding: 5rem 2rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 2.5rem;
+}
+.hero h1 {
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 8px black;
+}
+.card-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.module-card {
+    background: white;
+    border-radius: 28px;
+    width: 260px;
+    padding: 2rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e5d5b0;
+}
+.module-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+}
+.module-icon { font-size: 3rem; margin-bottom: 1rem; }
+.module-card h3 { color: #8b2c1d; margin-bottom: 0.5rem; }
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #7b6e5c;
+    border-top: 1px solid #e0cfb5;
+    margin-top: 2rem;
+}
+/* 移动端地图高度适配 */
+@media (max-width: 780px) {
+    .page-container { padding: 0 1rem; }
+    .navbar { gap: 1rem; }
+    .nav-btn { font-size: 1rem; padding: 0.3rem 1rem; }
+    #map { height: 50vh !important; }
+}
