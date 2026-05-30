@@ -16,6 +16,40 @@
         .timeline-title { font-size: 1.3rem; font-weight: bold; margin: 0.3rem 0; }
         .importance { display: inline-block; background: #e0b354; padding: 2px 10px; border-radius: 30px; font-size: 0.7rem; margin-left: 12px; }
         .timeline-btn { margin-top: 8px; background: #e0b354; border: none; padding: 4px 12px; border-radius: 30px; cursor: pointer; font-weight: bold; }
+
+        .event-original-text {
+            margin-top: 12px;
+            background: #f9f5f0;
+            border-left: 4px solid #b32d2d;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #2c3e2f;
+        }
+        .event-original-text strong {
+            color: #b32d2d;
+            font-size: 0.85rem;
+        }
+        .original-content {
+            max-height: 180px;
+            overflow-y: auto;
+            margin-top: 8px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            padding-right: 6px;
+        }
+        .original-content::-webkit-scrollbar {
+            width: 5px;
+        }
+        .original-content::-webkit-scrollbar-track {
+            background: #e0e0e0;
+            border-radius: 4px;
+        }
+        .original-content::-webkit-scrollbar-thumb {
+            background: #b32d2d;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -41,6 +75,11 @@
         <footer>点击「查看地图」可跳转至对应地点</footer>
     </div>
     <script src="js/data.js"></script>
+    <script src="js/config.js"></script>
     <script src="js/timeline.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <!-- <script src="js/book-data.js"></script>   书籍全文数据 -->
+    <script src="js/knowledge-base.js"></script>
+    <script src="js/ai-chat.js"></script>
 </body>
 </html>
