@@ -10,7 +10,7 @@
 
 ## 技术架构
 
-- **前端三件套**：HTML5 + CSS3 + 原生 JavaScript（无框架依赖）
+- **前端**：HTML5 + CSS3 + 原生 JavaScript（无框架依赖）
 - **可视化库**：Leaflet（地图）、ECharts（关系图）
 - **地图底图**：CartoDB 浅色瓦片（`https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png`）
 - **字体图标**：Font Awesome 6
