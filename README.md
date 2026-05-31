@@ -246,7 +246,7 @@ python3 -m http.server 8000
 
 项目由 **[出版融合课程-埃德加·斯诺名人数据库小组]** 开发维护。如有疑问或建议，欢迎通过 [2501211829@stu.pku.edu.cn] 联系。
 
-**项目主页**：[[GitHub 仓库链接]([https://github.com/parLeaf/snow.webdata/tree/main)]
+**项目主页**：[[GitHub 仓库链接]([https://github.com/parLeaf/snow.webdata/tree/main)]]
 
 ---
 
